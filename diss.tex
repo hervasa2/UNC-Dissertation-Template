@@ -1,4 +1,131 @@
-\input{common/preamble}
+\documentclass[11pt,letterpaper,twoside]{report}
+
+% Layout
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[subfigure]{tocloft}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{enumitem}
+
+% Citation style
+\usepackage[backend = biber, bibstyle=myphys, sorting=none, biblabel=brackets]{biblatex}
+\addbibresource{diss.bib}
+
+% Figures
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+% Tables
+%\usepackage{booktabs}
+%\usepackage{dcolumn}
+%\usepackage{multirow}
+%\usepackage{hhline}
+%\usepackage{stackengine}
+%\usepackage{tablefootnote}
+\usepackage{tabularx}
+\newcommand{\tr}{\raggedright\arraybackslash}
+\newcommand{\tc}{\centering\arraybackslash}
+\newcommand{\tl}{\raggedleft\arraybackslash}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+% Algorithms
+\usepackage[boxed,longend]{algorithm2e}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+
+% Typography
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{textcomp}
+
+% Macro support
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{ntheorem}
+
+% Diagrams
+\usepackage{pgf}
+\usepackage{tikz} % extensive form game trees
+\usetikzlibrary{calc} % calculating TikZ coordinates
+\usetikzlibrary{arrows.meta} % arrows for theory diagrams
+\usetikzlibrary{trees}
+
+% PDF links
+\usepackage[hidelinks]{hyperref} % backref=page
+
+\input{common/layout}
+\input{common/macros}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\definecolor{mylightred}{RGB}{211,79,73}
+\definecolor{mydarkred}{RGB}{199,44,38}
+\definecolor{mylightgreen}{RGB}{78,153,67}
+\definecolor{mydarkgreen}{RGB}{43,129,33}
+\definecolor{mylightpurple}{RGB}{150,107,178}
+\definecolor{mydarkpurple}{RGB}{126,78,160}
+\definecolor{mylightblue}{RGB}{49,101,205}
+\definecolor{mydarkblue}{RGB}{20,92,205}
+\tikzset{
+  juliadot/.style args={#1,#2}{shape=circle,line width=0.03ex,minimum width=0.4ex,fill=#1,draw=#2}
+}
+\newcommand\julialetter[1]{{\strut\fontfamily{cmss}\bfseries\selectfont{#1}}}
+\DeclareRobustCommand\julia{%
+\begin{tikzpicture}[baseline=0mm, every node/.style={inner sep=0mm, outer sep=0mm}]
+\node[anchor=base]        (j) at (0,0) {\julialetter{\j}};
+\node[anchor=base, right=0ex of j] (u) {\julialetter{u}};
+\node[anchor=base, right=0ex of u] (l) {\julialetter{l}};
+\node[anchor=base, right=0ex of l] (i) {\julialetter{\i}};
+\node[anchor=base, right=0ex of i] (a) {\julialetter{a}};
+\path let \p1 = (j) in node[juliadot={mylightblue,mydarkblue}] (bluedot) at (\x1+0.02ex,1.4ex) {};
+\path let \p1 = (i) in node[juliadot={mylightred,mydarkred}] (reddot) at (\x1,1.4ex) {};
+\path let \p1 = (reddot) in node[juliadot={mylightpurple,mydarkpurple}] (purpledot) at (\x1+0.5ex,\y1) {};
+\path let \p1 = (reddot) in node[juliadot={mylightgreen,mydarkgreen}] (greendot) at (\x1+0.25ex,\y1+0.42ex) {};
+\end{tikzpicture}%
+}
+\DeclareRobustCommand\jl{%
+\begin{tikzpicture}[baseline=0mm, every node/.style={inner sep=0mm, outer sep=0mm}]
+\node[anchor=base]        (j) at (0,0) {\julialetter{\j}};
+\node[anchor=base, right=0ex of j] (l) {\julialetter{l}};
+\path let \p1 = (j) in node[juliadot={mylightblue,mydarkblue}] (bluedot) at (\x1+0.02ex,1.4ex) {};
+\end{tikzpicture}%
+}
+
+
+\setlength{\columnsep}{1cm}
+\def\MJDEMit{\itshape{\scshape{Majorana Demonstrator}}}
+\def\DEMit{\itshape{\scshape{Demonstrator}}}
+\def\MJMit{\itshape{\scshape{Majorana}}}
+\def\geEn{$^{76}$Ge}
+\def\Qbb{$Q_{\beta\beta}$}
+\def\CsS{$^{137}\text{Cs}$}
+\def\BaS{$^{133}\text{Ba}$}
+\def\ThS{$^{228}\text{Th}$}
+\def\novbb{$0\nu\beta\beta$}
+\def\twovbb{$2\nu\beta\beta$}
+\def\mbb{$\langle m_{\beta\beta} \rangle$}
+\def\Thalf{$T^{0\nu}_{1/2}$}
+
+% gamma energies taken from Firestone
+\newcommand{\Cs}{661.660}
+\newcommand{\Ba}{356.017}
+\newcommand{\Baone}{276.398}
+\newcommand{\Batwo}{302.852}
+\newcommand{\Bathree}{356.017}
+\newcommand{\Bafour}{383.851}
+\newcommand{\juliapackage}[1]{\mbox{\julialetter{#1}\julialetter{.}\jl{}}}
+\newcommand{\SSD}{\juliapackage{SolidStateDetectors}}
+\newcommand{\IC}{P43511A}
 
 \begin{document}
 
@@ -11,17 +138,38 @@
 % Chapter 1
 \input{ch2}
 
+\input{ch3}
+
+\input{ch4}
+
+\input{ch5}
+
+\input{ch6}
+
+\input{ch7}
+
+\input{ch8}
+
+\input{ch9}
+
+\input{ch10}
+
+\input{ch11}
+
+\input{ch12}
+
+\input{ch13}
 % Appendices
-\appendix
+%\appendix
 
 % Switch to 1" title margins for appendices
 \titlespacing{\chapter}{0in}{-.38in}{11pt}
 
 % Appendix 1
-\input{ap1}
+%\input{ap1}
 
 % Appendix 2
-\input{ap2}
+%\input{ap2}
 
 % References
 \input{common/references}
