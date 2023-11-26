@@ -1,5 +1,5 @@
 \chapter{Interaction of Gammas With Matter}\label{chap:gammas}
-The gamma-rays produced in nuclear processes open a window into the nucleus. The energy of these gammas are tied to nuclear energy levels, thus once measured, their study provides a pathway for isotope identification. Radioactive decay often populate excited nuclear states, resulting in gammas that, although informative, are a dominant background in rare-event searches. Understanding the ways in which gammas interact with matter is essential to the design of any experiment wishing to detect rare events. The gammas produced in the decay chains of the primordial isotopes, Th$^{232}$ and U$^{238}$, -- isotopes which are present in trace quantities in all materials on Earth -- can penetrate several centimeters of shielding or detector material. While this poses a problem to rare-event searches, the highly penetrating nature of gammas, and specifically the ability to tune this penetration depth by choosing a gamma energy, provides a rich tool for the study of detectors. This chapter provides an overview of the dominant interactions of gammas with matter and elucidates how monoenergetic gammas can be used for the study of semiconductor detectors -- a topic which will be treated in detail in Chapter~\ref{chap:scanner}.
+The gamma-rays (or gammas for short) produced in nuclear processes open a window into the nucleus. The energy of these gammas are tied to nuclear energy levels, thus once measured, their study provides a pathway for isotope identification. Radioactive decay often populate excited nuclear states, resulting in gammas that, although informative, are a dominant background in rare-event searches. Understanding the ways in which gammas interact with matter is essential to the design of any experiment wishing to detect rare events. The gammas produced in the decay chains of the primordial isotopes, Th$^{232}$ and U$^{238}$ -- isotopes which are present in trace quantities in all materials on Earth -- can penetrate several centimeters of shielding or detector material. While this poses a problem to rare-event searches, the highly penetrating nature of gammas, and specifically the ability to tune this penetration depth by choosing a gamma energy, provides a rich tool for the study of detectors. This chapter provides an overview of the dominant interactions of gammas with matter and elucidates how monoenergetic gammas can be used for the study of semiconductor detectors -- a topic which will be treated in detail in Chapter~\ref{chap:scanner}.
 
 %In contrast with alpha and beta particles, gamma-ray photons (or gammas for short) carry no charge and thus do not participate in Coulomb interactions. Therefore, they cannot be detected directly. They share this ``ghostlike'' behavior with neutrinos, a particle which can transverse light-years of dense material without interacting~\cite{close_particlebook}. However, the probability of interaction of gammas with matter is orders of magnitude higher, such that they can be fully stopped within everyday-sized objects.
 
@@ -21,14 +21,14 @@ The energy of the incident gamma can also be partially transferred to an electro
 	E_\text{out} = \frac{E_\text{in}}{1 + \frac{E_\text{in}}{m_ec^2}(1 - \cos\theta)}~,
 	\label{eq:compton_intro}
 \end{equation}
-where $m_e$ is the mass of the electron~\cite{compton}. The electron recoils with an energy of $E_e = E_\text{in} - E_\text{out}$. As can be seen by manipulation of Eq.~\ref{eq:compton_intro}, while no minimum energy transfer is required, the maximum energy transfer occurs at $\theta = \pi$. This energy is referred to as the ``Compton edge'', a feature which can be clearly seen in Fig.~\ref{fig:compton_shapes} and Fig.~\ref{fig:spectrum_features}.
+where $m_e$ is the mass of the electron~\cite{compton}. The electron recoils with an energy of $E_e = E_\text{in} - E_\text{out}$. As can be seen by manipulation of Eq.~\ref{eq:compton_intro}, while no minimum energy transfer is required, the maximum energy transfer occurs at $\theta = \pi$. This energy is referred to as the ``Compton edge''.
 
 The Compton effect dominates when the incident gamma energy is between 180\,keV and 8\,MeV. The probability of Compton scattering depends on the number of electrons in the absorber and is therefore proportional to $Z$. While, the scattering angle, $\theta$ can take any value, not all angles are equiprobable. This relation is given by the differential scattering cross-section, $d\sigma/d\Omega$, predicted by the Klein-Nishina formula:
 \begin{equation}
 	\frac{d\sigma}{d\Omega} = Zr_0^2\left(\frac{1}{1+\epsilon_\text{in}(1 - \cos\theta)}\right)^2 \left(\frac{1 + \cos^2\theta}{2}\right) \left(1 + \frac{\epsilon_\text{in}^2(1-\cos\theta)^2}{(1+\cos^2\theta)\left[1+\epsilon_\text{in}(1-\cos\theta)\right]}\right)~,
 	\label{eq:klein-nishina}
 \end{equation}
-where $\epsilon_\text{in} \equiv E_\text{in}/m_ec^2$ and $r_0$ is the classical electron radius~\cite{klein-nishina}. This cross section is plotted for all energies between 1\,keV and 10\,MeV in Fig.~\ref{fig:klein-nishina}. Note that the probability of forward scattering is enhanced at higher energies. 
+where $\epsilon_\text{in} \equiv E_\text{in}/m_ec^2$ and $r_0$ is the classical electron radius~\cite{klein-nishina}. This cross-section is plotted for all energies between 1\,keV and 10\,MeV in Fig.~\ref{fig:klein-nishina}. Note that the probability of forward scattering is enhanced at higher energies. 
 
 \begin{figure}[htb]
 	\centering
@@ -49,7 +49,7 @@ The electron and positron will gradually lose their energy in the absorber mediu
 \begin{figure}[htb]
 	\centering
 	\includegraphics{figs/gammas/linear_attenuation_ge_width_4in.pdf}
-	\caption{Total linear absorption coefficient (not including coherent scattering) in Ge. The contributions from the photoelectric effect, Compton scattering and pair production are shown. Data points are sourced from Ref.~\cite{NIST}}
+	\caption{Total linear absorption coefficient (not including coherent scattering) in Ge. The contributions from the photoelectric effect, Compton scattering and pair production are shown. Data points are sourced from Ref.~\cite{NIST}.}
 	\label{fig:attenuation}
 \end{figure}
 Gamma-ray intensity decreases exponentially as gammas transverse an absorber. Depending on the energy, gammas will undergo photoelectric absorption, Compton scattering, or if energetically allowed, pair production, exponentially attenuating the ray's intensity, $I_0$, to $I$ in a path of length $l$:
